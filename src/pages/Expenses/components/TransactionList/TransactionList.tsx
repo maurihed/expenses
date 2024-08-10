@@ -60,6 +60,9 @@ function TransactionList({
 
     return (
       <ExpensesSection title="Transacciones" loading={loading}>
+        {!loading && transactions.length === 0 && (
+          <p>No hay transacciones</p>
+        )}
         <div className="flex flex-col gap-4">
           {Object.entries(transformedTransactions).map(
             ([_date, _transactions]) => (
