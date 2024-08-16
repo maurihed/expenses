@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, DatePicker, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/react';
+import { Button, DatePicker, Input, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Radio, RadioGroup, cn } from '@nextui-org/react';
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { ModalSelector } from "@/componets";
 import { Account, Categories, Transaction } from "@/types";
@@ -34,7 +34,10 @@ const EMPTY_TRANSACTION: Transaction = {
 }
 
 const CATEGORIES = Object.values(Categories).map((category) => ({
-  icon: getCategoryIconName(category), value: category, name: category
+  icon: getCategoryIconName(category).iconName,
+  iconColor: getCategoryIconName(category).color,
+  value: category,
+  name: category
 }));
 
 function TransactionFormModal({ isOpen, onClose, transaction, account, action }: Props) {
@@ -81,6 +84,29 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
           </div>
         </ModalHeader>
         <ModalBody>
+        <RadioGroup
+          orientation="horizontal"
+          className="items-end"
+          value={transactionToEdit.type}
+          onValueChange={(value: string) => handleChange('type', value)}
+        >
+          <Radio classNames={{
+            base: cn(
+              "inline-flex m-0 items-center justify-between",
+              "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-2 border-2 border-slate-400",
+              "data-[selected=true]:border-danger-700 text-red-500",
+            ),
+            wrapper: "group-data-[selected=true]:border-danger-700",
+            control: "bg-red-700",
+          }} value="expense">Gasto</Radio>
+          <Radio classNames={{
+            base: cn(
+              "inline-flex m-0 items-center justify-between",
+              "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-2 border-2 border-slate-400",
+              "data-[selected=true]:border-primary"
+            ),
+          }} value="income">Ingreso</Radio>
+        </RadioGroup>
           <Input autoFocus label="Cantidad" value={transactionToEdit.amount.toString()} onChange={(e) => handleChange('amount', e.target.value)} />
           <Input label="Descripción" value={transactionToEdit.description} onChange={(e) => handleChange('description', e.target.value)} />
           <DatePicker label="Fecha" value={toDatePickerFormat(transactionToEdit.date)} onChange={(e) => handleChange('date', parseDatePickerValue(e))} />

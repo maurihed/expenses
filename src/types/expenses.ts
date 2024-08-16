@@ -12,6 +12,7 @@ export enum Categories {
   TRANSPORTE = "Transporte",
   LIMPEZA = "Limpeza",
   ELECTRONICOS = "Electronicos",
+  DIVERSION = "Diversion",
   MASCOTAS = "Mascotas",
   RECREACION = "Recreacion",
   ROPA = "Ropa",

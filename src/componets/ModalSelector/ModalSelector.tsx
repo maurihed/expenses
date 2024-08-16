@@ -2,8 +2,9 @@ import { Input, Modal, ModalBody, ModalContent, useDisclosure } from "@nextui-or
 import { useState } from "react";
 import { Icon } from "../Icon";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
+import classNames from "classnames";
 
-type Item = { icon: IconName; value: string, name: string };
+type Item = { icon: IconName; value: string; name: string; iconColor?: string };
 type Props = {
   items: Item[];
   value: string;
@@ -26,7 +27,7 @@ function ModalSelector({items, value, onChange }: Props) {
   return (
     <div>
       <button onClick={onOpen} className="bg-gray-100 w-full px-2 py-3 rounded-lg flex items-center">
-        <span className="w-8 h-8 rounded-full bg-slate-300 mr-2 flex justify-center items-center">
+        <span className={classNames("w-8 h-8 rounded-full text-white mr-2 flex justify-center items-center", selectedItem.iconColor ? selectedItem.iconColor : "bg-green-700")}>
           <Icon prefix="fas" name={selectedItem.icon} />
         </span>
         <span>{selectedItem.name}</span>
@@ -42,7 +43,7 @@ function ModalSelector({items, value, onChange }: Props) {
                     className="flex items-center px-2 py-4 w-full border-b border-slate-300"
                     onClick={() => onSelect(item)}
                   >
-                    <span className="w-8 h-8 rounded-full bg-slate-300 mr-4 flex justify-center items-center">
+                    <span className={classNames("w-8 h-8 rounded-full mr-4 flex justify-center items-center text-white", item.iconColor ? item.iconColor : "bg-green-700")}>
                       <Icon prefix="fas" name={item.icon} />
                     </span>
                     <span>{item.name}</span>

@@ -1,6 +1,6 @@
 import { formatMoney } from "@/utils";
 import { useAccounts, useTransactions } from "./hooks";
-import { AccountList, TransactionList } from "./components";
+import { AccountList, ExpensesChart, ExpensesSection, TransactionList } from "./components";
 import { ExpensesProvider } from "./contexts";
 
 function Expenses() {
@@ -23,6 +23,9 @@ function Expenses() {
                 </div>
                 <AccountList loading={loadingAccounts} accounts={accounts} />
                 <TransactionList loading={loadingTransactions} transactions={transactions} />
+                <ExpensesSection title="Resumen de gastos" loading={loadingTransactions}>
+                    <ExpensesChart transactions={transactions}/>
+                </ExpensesSection>
             </div>
         </ExpensesProvider>
     );

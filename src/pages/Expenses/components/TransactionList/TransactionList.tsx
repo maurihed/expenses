@@ -42,12 +42,16 @@ function TransactionList({
     const editTransactionWrapper = (transactionToEdit: Transaction, transactionEdited: Transaction) => {
       editTransaction({ transactionToEdit, transactionEdited });
       const isSameAccount = transactionToEdit.accountId === transactionEdited.accountId;
-      if (isSameAccount && transactionToEdit.amount === transactionEdited.amount) {
+      // If the modification does not affect the account balance, do not update the account balance
+      if (isSameAccount &&
+          transactionToEdit.amount === transactionEdited.amount &&
+          transactionToEdit.type === transactionEdited.type
+      ) {
         onCloseHandler();
         return;
       }  
 
-      if (transactionToEdit.accountId === transactionEdited.accountId) {
+      if (isSameAccount) {
         const adjustment = (transactionToEdit.type === 'expense' ? transactionToEdit.amount : -transactionToEdit.amount) +
         (transactionEdited.type === 'expense' ? -transactionEdited.amount : transactionEdited.amount);
         updateAccountBalance({
@@ -57,7 +61,7 @@ function TransactionList({
       } else {
         updateAccountBalance({
           accountId: transactionToEdit.accountId,
-          newBalance: transactionEdited.type === 'expense' ? transactionEdited.amount : -transactionEdited.amount
+          newBalance: transactionEdited.type === 'expense' ? transactionToEdit.amount : -transactionToEdit.amount
         });
         updateAccountBalance({
           accountId: transactionEdited.accountId,

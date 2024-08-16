@@ -25,7 +25,7 @@ export class AccountService {
     }
   }
 
-  public static async getAccountRefById(id: string): Promise<Account> {
+  private static async getAccountRefById(id: string): Promise<Account> {
     try {
       const accountCollectionRef = collection(db, "accounts").withConverter(converter<Account>());
       const docRef = doc(accountCollectionRef, id);
