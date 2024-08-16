@@ -4,8 +4,8 @@ import { Account, Transaction } from "@/types";
 type ExpensesContextType = {
   accounts: Account[],
   newTransaction: (transaction: Transaction) => void
-  editTransaction: (transactionToEdit: Transaction, transactionEdited: Transaction) => void
-  updateAccountBalance: (accountId: string, newBalance: number) => void
+  editTransaction: ({ transactionToEdit, transactionEdited }: { transactionToEdit: Transaction, transactionEdited: Transaction }) => void
+  updateAccountBalance: ({accountId, newBalance}: { accountId: string, newBalance: number}) => void
   deleteTransaction: (transactionId: string) => void
 }
 

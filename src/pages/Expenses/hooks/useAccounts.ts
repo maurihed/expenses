@@ -1,44 +1,25 @@
-import { useCallback, useEffect, useState } from "react";
-import { collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
-import type { Account } from "@/types";
-
-import db, { converter } from "@/firebase";
+import { AccountService } from "@/services";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { Account } from "@/types";
 
 export const useAccounts = () => {
-  const [accounts, setAccounts] = useState<Account[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<unknown>(null);
+  const queryClient = useQueryClient();
 
-  const accountsCollectionRef = collection(db, "accounts").withConverter(converter<Account>());
+  const { data, isLoading, error } = useQuery<Account[]>("accounts", AccountService.getAccounts, {
+    staleTime: Infinity, // Disable background fetching
+  });
 
-  const updateAccountBalance = useCallback(async (accountId: string, adjustedBalance: number) => {
-    const accountRef = doc(db, "accounts", accountId);
-    const accountSnap = await getDoc(accountRef);
-    if (accountSnap.exists()) {
-      const newBalance = accountSnap.data().balance + adjustedBalance;
-      updateDoc(accountRef, { balance: newBalance });
-      setAccounts((prevAccounts) => prevAccounts.map((prevAccount) => prevAccount.id === accountId ? { ...prevAccount, balance: newBalance } : prevAccount));
+  const { mutate: updateAccountBalance } = useMutation(AccountService.updateAccountBalance, {
+    onSuccess: (updatedAccount: Account) => {
+      queryClient.setQueryData<Account[]>("accounts", (preAccounts) => preAccounts?.map(
+        (prevAccount) => prevAccount.id === updatedAccount.id ? { ...updatedAccount } : prevAccount) ?? []
+      );
     }
-  }, [setAccounts]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        setLoading(true);
-        const data = await getDocs(accountsCollectionRef);
-        setAccounts(data.docs.map((doc) => doc.data()));
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    })();
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+  })
 
   return {
-    accounts,
-    loadingAccounts: loading,
+    accounts: data || [],
+    loadingAccounts: isLoading,
     error,
     updateAccountBalance,
   }

@@ -14,14 +14,15 @@ const {
   VITE_FIREBASE_MEASUREMENT_ID,
   VITE_FIREBASE_APP_ID,
   VITE_FIREBASE_MESSAGING_SENDER_ID,
-  VITE_FIREBASE_API_KEY
+  VITE_FIREBASE_API_KEY,
+  VITE_FIREBASE_PROJECT_ID
 } = import.meta.env;
 
 const firebaseConfig = {
   apiKey: VITE_FIREBASE_API_KEY,
-  authDomain: "expenses-79b2b.firebaseapp.com",
-  projectId: "expenses-79b2b",
-  storageBucket: "expenses-79b2b.appspot.com",
+  authDomain: `${VITE_FIREBASE_PROJECT_ID}.firebaseapp.com`,
+  projectId: VITE_FIREBASE_PROJECT_ID,
+  storageBucket: `${VITE_FIREBASE_PROJECT_ID}.appspot.com`,
   messagingSenderId: VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: VITE_FIREBASE_APP_ID,
   measurementId: VITE_FIREBASE_MEASUREMENT_ID

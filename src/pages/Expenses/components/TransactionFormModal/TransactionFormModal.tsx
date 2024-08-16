@@ -66,7 +66,7 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
   const deleteTransactionWrapper = () => {
     if (transaction) {
       deleteTransaction(transaction.id);
-      updateAccountBalance(transaction.accountId, transaction.type === 'expense' ? transaction.amount : -transaction.amount);
+      updateAccountBalance({ accountId: transaction.accountId, newBalance: transaction.type === 'expense' ? transaction.amount : -transaction.amount });
     }
     onClose();
   }

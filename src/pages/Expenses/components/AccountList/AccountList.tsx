@@ -26,7 +26,7 @@ function AccountList({ accounts, loading }: { accounts: Account[], loading: bool
 
     const handleNewTransaction = useCallback((transaction: Transaction) => {
         newTransaction(transaction);
-        updateAccountBalance(transaction.accountId, transaction.type === 'expense' ? -transaction.amount : transaction.amount);
+        updateAccountBalance({ accountId: transaction.accountId, newBalance: transaction.type === 'expense' ? -transaction.amount : transaction.amount });
         closeHandler();
     }, [closeHandler, newTransaction, updateAccountBalance]);
 
