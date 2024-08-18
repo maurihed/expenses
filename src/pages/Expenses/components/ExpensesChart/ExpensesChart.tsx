@@ -41,7 +41,7 @@ export default function ExpensesChart({ transactions }: {transactions: Transacti
             legend: {
               labels: {
                   font: {
-                      size: 16,
+                      size: 14,
                       family: "Moderustic",
                   },
               },

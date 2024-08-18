@@ -21,13 +21,13 @@ function Expenses() {
                         <p className="text-3xl">{formatMoney(total)}</p>
                     </div>
                 </div>
+                <AccountList loading={loadingAccounts} accounts={accounts} />
                 <ExpensesSection title="Resumen de gastos" loading={loadingTransactions}>
                     <ExpensesChart transactions={transactions}/>
                 </ExpensesSection>
                 <ExpensesSection title="Tendencia de gastos" loading={loadingTransactions}>
                     <ExpensesTrend transactions={transactions}/>
                 </ExpensesSection>
-                <AccountList loading={loadingAccounts} accounts={accounts} />
                 <TransactionList loading={loadingTransactions} transactions={transactions} />
             </div>
         </ExpensesProvider>
