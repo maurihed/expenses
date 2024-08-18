@@ -1,6 +1,6 @@
 import { formatMoney } from "@/utils";
 import { useAccounts, useTransactions } from "./hooks";
-import { AccountList, ExpensesChart, ExpensesSection, TransactionList } from "./components";
+import { AccountList, ExpensesChart, ExpensesSection, ExpensesTrend, TransactionList } from "./components";
 import { ExpensesProvider } from "./contexts";
 
 function Expenses() {
@@ -21,11 +21,14 @@ function Expenses() {
                         <p className="text-3xl">{formatMoney(total)}</p>
                     </div>
                 </div>
-                <AccountList loading={loadingAccounts} accounts={accounts} />
-                <TransactionList loading={loadingTransactions} transactions={transactions} />
                 <ExpensesSection title="Resumen de gastos" loading={loadingTransactions}>
                     <ExpensesChart transactions={transactions}/>
                 </ExpensesSection>
+                <ExpensesSection title="Tendencia de gastos" loading={loadingTransactions}>
+                    <ExpensesTrend transactions={transactions}/>
+                </ExpensesSection>
+                <AccountList loading={loadingAccounts} accounts={accounts} />
+                <TransactionList loading={loadingTransactions} transactions={transactions} />
             </div>
         </ExpensesProvider>
     );

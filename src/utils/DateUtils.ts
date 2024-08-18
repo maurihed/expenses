@@ -42,3 +42,11 @@ export const toDatePickerFormat = (date: Date) => {
 export const parseDatePickerValue = (calendarDate: CalendarDate) => {
   return new Date(`${calendarDate.month}-${calendarDate.day}-${calendarDate.year}`);
 }
+
+export const getMonthDays = (month: number, year: number): number => {
+  return +(new Date(year, month, 0).getDate());
+}
+
+export const getMonthName = (month: number): string => {
+  return MONTHS[month];
+}

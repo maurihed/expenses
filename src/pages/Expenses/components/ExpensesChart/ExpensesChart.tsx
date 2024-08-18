@@ -29,17 +29,7 @@ export default function ExpensesChart({ transactions }: {transactions: Transacti
       data: Object.values(data),
       backgroundColor: Object.keys(data).map((category) => getCategoryIconName(category).rawColor),
       borderWidth: 0,
-    }],
-    options: {
-      scales: {
-        x: {
-          labels: {
-            fontColor: '#fff',
-            fontFamily: 'Moderustic'
-          }
-        }
-      }
-    }
+    }]
   }), [data]);
 
   return (
@@ -47,6 +37,16 @@ export default function ExpensesChart({ transactions }: {transactions: Transacti
       <div className='w-full max-w-3xl'>
         <Doughnut data={chartData} options={{
           color: '#fff',
+          plugins: {
+            legend: {
+              labels: {
+                  font: {
+                      size: 16,
+                      family: "Moderustic",
+                  },
+              },
+          },
+          }
         }} />
       </div>
     </div>
