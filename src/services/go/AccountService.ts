@@ -24,10 +24,8 @@ export class AccountService {
     try {
       const response = await fetch(`${ACCOUNTS_URL}/${accountId}`);
       const account = await response.json();
-      console.log(account);
       
       const adjustedBalance = account.balance + newBalance;
-      console.log(adjustedBalance);
 
       await fetch(`${ACCOUNTS_URL}/${accountId}`, {
         method: "PUT",
@@ -36,7 +34,6 @@ export class AccountService {
         },
         body: JSON.stringify({ ...account, balance: adjustedBalance }),
       });
-      console.log({...account, balance: adjustedBalance})
       return Promise.resolve({...account, balance: adjustedBalance});
     } catch (error) {
       return Promise.reject(error);
