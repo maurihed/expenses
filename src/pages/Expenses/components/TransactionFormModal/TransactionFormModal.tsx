@@ -107,7 +107,7 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
             ),
           }} value="income">Ingreso</Radio>
         </RadioGroup>
-          <Input autoFocus label="Cantidad" value={transactionToEdit.amount.toString()} onChange={(e) => handleChange('amount', e.target.value)} />
+          <Input autoFocus type="number" pattern="-?\d*\.{0,1}\d+" label="Cantidad" value={transactionToEdit.amount.toString()} onChange={(e) => handleChange('amount', e.target.value)} />
           <Input label="Descripción" value={transactionToEdit.description} onChange={(e) => handleChange('description', e.target.value)} />
           <DatePicker label="Fecha" value={toDatePickerFormat(transactionToEdit.date)} onChange={(e) => handleChange('date', parseDatePickerValue(e))} />
           <ModalSelector items={CATEGORIES} value={transactionToEdit.category} onChange={(e) => handleChange('category', e)} />
