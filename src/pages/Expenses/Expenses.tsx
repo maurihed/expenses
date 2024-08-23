@@ -11,8 +11,8 @@ function Expenses() {
 
     return (
         <ExpensesProvider value={{ accounts, newTransaction, editTransaction, updateAccountBalance, deleteTransaction }}>
-            <div className="min-h-full bg-gray-800 text-white px-4 pb-4">
-                <div className="bg-gray-700 rounded-b-lg text-center mb-8">
+            <div className="min-h-full">
+                <div className="bg-slate-800 rounded-b-lg text-center mb-8">
                     <div className="p-3">
                         <h1 className="text-xl">Agosto</h1>
                     </div>
