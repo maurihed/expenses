@@ -1,6 +1,7 @@
 import { CalendarDate, parseDate } from "@internationalized/date";
 
 const MONTHS = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Dicdiembre"];
+const WEEK_DAYS = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
 export const formatTransactionDate = (date: string) => {
   const _date = new Date(date).getTime();
   const currentDate = new Date().getTime();
@@ -27,9 +28,9 @@ export const formatDate = (date: Date) => {
 }
 
 export const formatDateName = (date: Date) => {
-  const month = date.getMonth();
-  const day = date.getDate();
-  return `${day} ${MONTHS[month]}`;
+  const weekDay = date.getDay();
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${day}, ${WEEK_DAYS[weekDay]}`;
 }
 
 export const toDatePickerFormat = (date: Date) => {
@@ -46,6 +47,17 @@ export const parseDatePickerValue = (calendarDate: CalendarDate) => {
 export const getMonthDays = (month: number, year: number): number => {
   return +(new Date(year, month, 0).getDate());
 }
+
+export const getCurrentDate = (): { day: number, month: number, year: number } => {
+  const date = new Date();
+  return {
+    day: date.getDate(),
+    month: date.getMonth(),
+    year: date.getFullYear()
+  }
+}
+
+export const getCurrentYear = (): number => new Date().getFullYear();
 
 export const getMonthName = (month: number): string => {
   return MONTHS[month];

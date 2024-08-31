@@ -46,9 +46,9 @@ export class TransactionService {
     }
   }
 
-  public static async getTransactions(): Promise<Transaction[]> {
+  public static async getTransactions(searchParams: URLSearchParams): Promise<Transaction[]> {
     try {
-      const response = await fetch(TRANSACTION_URL);
+      const response = await fetch(`${TRANSACTION_URL}?${searchParams.toString()}`);
       const transactions = await response.json();
       return Promise.resolve(transactions?.map((transaction: Transaction) => ({ ...transaction, date: new Date(transaction.date) })) ?? []);
     } catch (error) {

@@ -3,7 +3,8 @@ import { Transaction } from "@/types";
 import { addDoc, collection, deleteDoc, doc, getDocs, orderBy, query, updateDoc } from "firebase/firestore";
 
 export class TransactionService {
-  public static async getTransactions(): Promise<Transaction[]> {
+  public static async getTransactions(searchParams: URLSearchParams): Promise<Transaction[]> {
+    console.log(searchParams);
     try {
       const data = await getDocs(query(collection(db, "transactions").withConverter(converter<Transaction>()), orderBy("date", "desc")));
       return Promise.resolve(data.docs.map((doc) => doc.data()));
