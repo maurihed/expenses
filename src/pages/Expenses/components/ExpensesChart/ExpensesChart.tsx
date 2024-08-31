@@ -49,6 +49,8 @@ export default function ExpensesChart({ transactions }: { transactions: Transact
     [labels, entries]
   );
 
+  if (!transactions.length) return "No hay transacciones";
+
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-3xl">
