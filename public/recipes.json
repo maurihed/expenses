@@ -1,0 +1,95 @@
+[
+  {
+    "id": "1",
+    "name": "Pastel de chocolate",
+    "description": "Batido intenso de chocolate",
+    "ingredients": [
+      {
+        "id": "2",
+        "quantity": 240,
+        "unitPrice": 0.09
+      },
+      {
+        "id": "1",
+        "quantity": 315,
+        "unitPrice": 0.02
+      },
+      {
+        "id": "6",
+        "quantity": 210,
+        "unitPrice": 0.03
+      },
+      {
+        "id": "3",
+        "quantity": 5,
+        "unitPrice": 3
+      },
+      {
+        "id": "7",
+        "quantity": 350,
+        "unitPrice": 0.02
+      },
+      {
+        "id": "4",
+        "quantity": 7,
+        "unitPrice": 0.22
+      },
+      {
+        "id": "25",
+        "quantity": 45,
+        "unitPrice": 0.126
+      },
+      {
+        "id": "26",
+        "quantity": 30,
+        "unitPrice": 0.15
+      },
+      {
+        "id": "8",
+        "quantity": 7,
+        "unitPrice": 0.09
+      }
+    ],
+    "steps": [
+      "Step 1",
+      "Step 2"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Fudge de chocolate",
+    "description": "Fudge de chocolate",
+    "ingredients": [
+      {
+        "id": "34",
+        "quantity": 500,
+        "unitPrice": 0.09
+      },
+      {
+        "id": "2",
+        "quantity": 125,
+        "unitPrice": 0.09
+      },
+      {
+        "id": "25",
+        "quantity": 250,
+        "unitPrice": 0.126
+      },
+      {
+        "id": "26",
+        "quantity": 30,
+        "unitPrice": 0.15
+      },
+      {
+        "id": "35",
+        "quantity": 30,
+        "unitPrice": 0.17
+      }
+    ],
+    "steps": [
+      "Step 1",
+      "Step 2",
+      "Step 3"
+    ]
+  }
+]

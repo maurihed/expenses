@@ -2,6 +2,7 @@
 
 import { AccountService as FireBaseAccountService, TransactionService as FireBaseTransactionService } from  './firebase';
 import { AccountService as GoAccountService, TransactionService as GoTransactionService } from './go';
+import { SupplyService, RecipeService } from './go';
 
 let AccountService = FireBaseAccountService;
 let TransactionService = FireBaseTransactionService;
@@ -17,5 +18,7 @@ if (VITE_SERVICE_TYPE === 'go') {
 
 export {
   AccountService,
-  TransactionService
+  TransactionService,
+  SupplyService,
+  RecipeService
 }
