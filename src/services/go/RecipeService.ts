@@ -1,10 +1,18 @@
 import { Recipe } from "@/classes";
-import { RecipeType } from "@/types";
+import { RecipeRequest, RecipeType } from "@/types";
 
 // const { VITE_GO_BASE_URL } = import.meta.env;
 // const RECIPES_URL = `${VITE_GO_BASE_URL}/recipes`;
 
 export class RecipeService {
+  private static parseRecipeType(recipe: RecipeType): RecipeRequest {
+    const ingredients = recipe.ingredients.map((ingredient) => ({
+      id: ingredient.id,
+      quantity: ingredient.quantity,
+    }));
+    return { ...recipe, ingredients };   
+  }
+
   public static async deleteRecipe({ recipe }: {recipe: Recipe}): Promise<Recipe> {
     try {
       // const response = await fetch(`${RECIPES_URL}/${recipe.id}`, {
@@ -37,6 +45,8 @@ export class RecipeService {
   }
   public static async addRecipe(recipe: RecipeType): Promise<Recipe> {
     try {
+      console.log('JOIN');
+      const body = RecipeService.parseRecipeType(recipe);
       // const response = await fetch(RECIPES_URL, {
       //   method: "POST",
       //   headers: {
@@ -45,10 +55,11 @@ export class RecipeService {
       //   body: JSON.stringify(recipe),
       // });
       // const newRecipe = await response.json();
-      console.log('Creating new recipe', recipe);
+      console.log('Creating new recipe', body);
       const newRecipe = new Recipe(recipe);
       return Promise.resolve(newRecipe);
     } catch (error) {
+      console.log(error);
       return Promise.reject(error);
     }
   }

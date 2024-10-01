@@ -20,4 +20,8 @@ export type RecipeType = {
   steps: string[];
 }
 
+export type RecipeRequest = (Omit<RecipeType, 'id' | 'ingredients'>) & {
+  ingredients: Omit<RecipeSupply, 'unitPrice'>[]
+};
+
 export type RecipeForm = Omit<RecipeType, 'ingredientSupplies'>;

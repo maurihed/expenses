@@ -6,9 +6,10 @@ import { StepsInput } from "../StepsInput";
 
 type Props = {
   recipe: RecipeType;
+  action: (recipe: RecipeType) => void;
 };
 
-function RecipeForm({ recipe }: Props) {
+function RecipeForm({ recipe, action }: Props) {
   const [newRecipe, setNewRecipe] = useState<RecipeType>(recipe);
 
   const handleChange = (
@@ -20,7 +21,7 @@ function RecipeForm({ recipe }: Props) {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(newRecipe);
+    action(newRecipe);
   };
 
   return (
