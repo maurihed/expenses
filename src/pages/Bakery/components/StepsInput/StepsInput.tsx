@@ -22,7 +22,12 @@ function StepsInput({ label, value, onChange }: Props) {
     <div>
       <div className="mb-4 flex justify-between">
         <span>{label}</span>
-        <Button size="sm" variant="bordered" onClick={() => onChange([...value, ""])}>
+        <Button
+          color="primary"
+          size="sm"
+          variant="bordered"
+          onClick={() => onChange([...value, ""])}
+        >
           <Icon prefix="fas" name="plus" />
           Agregar Paso
         </Button>

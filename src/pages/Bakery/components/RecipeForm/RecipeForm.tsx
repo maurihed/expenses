@@ -1,5 +1,6 @@
 import { RecipeSupply, RecipeType } from "@/types";
 import { Button, Input, Textarea } from "@nextui-org/react";
+
 import { FormEvent, useState } from "react";
 import { IngredientsInput } from "../IngredientsInput";
 import { StepsInput } from "../StepsInput";
@@ -39,6 +40,7 @@ function RecipeForm({ recipe, action }: Props) {
           value={newRecipe.description}
           onChange={(e) => handleChange("description", e.target.value)}
         />
+        <div>Molde:</div>
       </div>
       <div className="grid grid-cols-1 gap-4 overflow-auto">
         <StepsInput

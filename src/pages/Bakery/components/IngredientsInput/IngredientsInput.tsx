@@ -38,6 +38,7 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
           size="sm"
           variant="bordered"
           onClick={() => onChange([...value, { id: "", quantity: 0, unitPrice: 0 }])}
+          color="primary"
         >
           <Icon prefix="fas" name="plus" />
           Agregar ingrediente

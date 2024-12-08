@@ -1,4 +1,4 @@
-import { Modal, ModalContent, ModalHeader, ModalBody } from "@nextui-org/react";
+import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react";
 import { RecipeForm } from "../RecipeForm";
 import { RecipeType } from "@/types";
 import { useRecipeMutations } from "../../hooks/useRecipeMutations";

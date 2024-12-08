@@ -1,7 +1,7 @@
-import { Button } from '@nextui-org/react';
-import { Icon } from '@/componets';
-import { Account } from '@/types';
-import { formatMoney } from '@/utils';
+import { Button } from "@nextui-org/react";
+import { Icon } from "@/componets";
+import { Account } from "@/types";
+import { formatMoney } from "@/utils";
 
 type Props = {
   account: Account;
@@ -13,23 +13,23 @@ function AccountRow({ account, newTransaction }: Props) {
 
   return (
     <div className="flex justify-between items-center">
-        <span className="mr-4 shrink-0 bg-green-700 w-10 h-10 rounded-full flex justify-center items-center">
-          <Icon prefix="fas" name="wallet" />
-        </span>
-        <div className="text-left grow">
-            <div>{name}</div>
-            <div className="text-slate-300">{formatMoney(balance)}</div>
-        </div>
-        <Button
-            variant="solid"
-            isIconOnly
-            color="default"
-            className="rounded-full"
-            aria-label='New Transaction'
-            onClick={() => newTransaction(account)}
-        >
-          <Icon prefix="fas" name="plus" />
-        </Button>
+      <span className="mr-4 shrink-0 bg-green-700 w-10 h-10 rounded-full flex justify-center items-center">
+        <Icon prefix="fas" name="wallet" />
+      </span>
+      <div className="text-left grow">
+        <div>{name}</div>
+        <div className="text-slate-300">{formatMoney(balance)}</div>
+      </div>
+      <Button
+        variant="solid"
+        isIconOnly
+        color="default"
+        className="rounded-full"
+        aria-label="New Transaction"
+        onPress={() => newTransaction(account)}
+      >
+        <Icon prefix="fas" name="plus" />
+      </Button>
     </div>
   );
 }
