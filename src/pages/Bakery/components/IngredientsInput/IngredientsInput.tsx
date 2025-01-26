@@ -1,6 +1,6 @@
 import { Icon } from "@/componets";
 import { RecipeSupply } from "@/types";
-import { Autocomplete, AutocompleteItem, Button, Input } from "@nextui-org/react";
+import { Autocomplete, AutocompleteItem, Button, Input } from "@heroui/react";
 import { useSupplies } from "../../hooks";
 
 type Props = {

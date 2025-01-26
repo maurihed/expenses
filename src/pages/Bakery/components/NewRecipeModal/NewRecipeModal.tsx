@@ -1,4 +1,4 @@
-import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/react";
+import { Modal, ModalBody, ModalContent, ModalHeader } from "@heroui/react";
 import { RecipeForm } from "../RecipeForm";
 import { RecipeType } from "@/types";
 import { useRecipeMutations } from "../../hooks/useRecipeMutations";
@@ -20,7 +20,7 @@ export default function NewRecipeModal({ isOpen, onClose }: Props) {
   const { createRecipe } = useRecipeMutations();
 
   return (
-    <Modal className="dark text-slate-100" isOpen={isOpen} onClose={onClose} size="full">
+    <Modal className="text-slate-100" isOpen={isOpen} onClose={onClose} size="full">
       <ModalContent>
         <ModalHeader>
           <div className="w-full flex justify-between align-center pr-4">

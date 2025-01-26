@@ -1,4 +1,4 @@
-import { Input, Modal, ModalBody, ModalContent, useDisclosure } from "@nextui-org/react";
+import { Input, Modal, ModalBody, ModalContent, useDisclosure } from "@heroui/react";
 import { useState } from "react";
 import { Icon } from "../Icon";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
@@ -42,7 +42,7 @@ function ModalSelector({ items, value, onChange }: Props) {
         </span>
         <span>{selectedItem.name}</span>
       </button>
-      <Modal className="dark text-white" isOpen={isOpen} onClose={onClose}>
+      <Modal className="text-white" isOpen={isOpen} onClose={onClose}>
         <ModalContent>
           <ModalBody>
             <Input
@@ -57,7 +57,7 @@ function ModalSelector({ items, value, onChange }: Props) {
               {filteredItems.map((item) => (
                 <li key={item.name} className="mb-2">
                   <button
-                    className="flex items-center px-2 py-4 w-full border-b border-slate-300"
+                    className="flex items-center px-2 py-4 w-full border-b border-slate-800"
                     onClick={() => onSelect(item)}
                   >
                     <span

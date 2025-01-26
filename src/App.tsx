@@ -1,4 +1,4 @@
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Bakery, Expenses } from "@/pages";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <NextUIProvider className="h-full dark text-foreground bg-background">
+      <HeroUIProvider className="h-full">
         <BrowserRouter>
           <MobileLayout>
             <Routes>
@@ -24,7 +24,7 @@ function App() {
             </Routes>
           </MobileLayout>
         </BrowserRouter>
-      </NextUIProvider>
+      </HeroUIProvider>
     </QueryClientProvider>
   );
 }

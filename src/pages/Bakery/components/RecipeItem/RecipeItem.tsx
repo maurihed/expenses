@@ -1,7 +1,7 @@
 import { Recipe } from "@/classes";
 import { Icon } from "@/componets";
 import { formatMoney } from "@/utils";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 
 type Props = {
   recipe: Recipe;

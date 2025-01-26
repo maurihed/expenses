@@ -1,4 +1,4 @@
-import { Button, useDisclosure } from "@nextui-org/react";
+import { Button, useDisclosure } from "@heroui/react";
 import { Icon } from "@/componets";
 import { NewRecipeModal, RecipeList } from "./components";
 import { useRecipes } from "./hooks";

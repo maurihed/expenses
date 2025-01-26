@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { Icon } from "@/componets";
 import { Account } from "@/types";
 import { formatMoney } from "@/utils";

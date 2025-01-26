@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDisclosure } from "@nextui-org/react";
+import { useDisclosure } from "@heroui/react";
 import { Transaction } from "@/types";
 import { formatDate, formatMoney, formatTransactionDate } from "@/utils";
 import { TransactionFormModal } from "../TransactionFormModal";

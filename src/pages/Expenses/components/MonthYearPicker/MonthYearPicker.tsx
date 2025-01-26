@@ -4,7 +4,7 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { Icon } from "@/componets";
 import { MonthYearType } from "@/types";
 
@@ -59,9 +59,9 @@ export default function MonthYearPicker({ value, onChange }: Props) {
         >
           <Icon prefix="fas" name="arrow-left" />
         </Button>
-        <Dropdown className="bg-slate-800 text-white">
+        <Dropdown className="bg-slate-800">
           <DropdownTrigger>
-            <Button className="text-white min-w-40 text-2xl" variant="light">
+            <Button className="min-w-40 text-2xl" variant="light">
               {displayName}
             </Button>
           </DropdownTrigger>

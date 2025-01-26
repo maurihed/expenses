@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { Account, Transaction } from "@/types";
 import { formatMoney } from "@/utils";
 import AccountRow from "./AccountRow";
-import { useDisclosure } from "@nextui-org/react";
+import { useDisclosure } from "@heroui/react";
 import { TransactionFormModal } from "../TransactionFormModal";
 import { ExpensesSection } from "../ExpensesSection";
 import { useExpensesContext } from "../../contexts";

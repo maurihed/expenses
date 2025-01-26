@@ -1,5 +1,5 @@
 import { Icon } from "@/componets";
-import { Button, Input } from "@nextui-org/react";
+import { Button, Input } from "@heroui/react";
 
 type Props = {
   label: string;

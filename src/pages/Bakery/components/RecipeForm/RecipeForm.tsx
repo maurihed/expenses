@@ -1,5 +1,5 @@
 import { RecipeSupply, RecipeType } from "@/types";
-import { Button, Form, Input, Select, SelectItem, Textarea } from "@nextui-org/react";
+import { Button, Form, Input, Select, SelectItem, Textarea } from "@heroui/react";
 
 import { FormEvent, useState } from "react";
 import { IngredientsInput } from "../IngredientsInput";
@@ -86,7 +86,6 @@ function RecipeForm({ recipe, action }: Props) {
           onChange={(e) => handleChange("description", e.target.value)}
         />
         <Select
-          className="dark"
           label="Molde"
           isRequired
           placeholder="Elige el molde"
@@ -96,9 +95,7 @@ function RecipeForm({ recipe, action }: Props) {
           name="molde"
         >
           {MODELS.map((molde) => (
-            <SelectItem className="dark" key={molde.key}>
-              {molde.label}
-            </SelectItem>
+            <SelectItem key={molde.key}>{molde.label}</SelectItem>
           ))}
         </Select>
       </div>
@@ -116,11 +113,7 @@ function RecipeForm({ recipe, action }: Props) {
           }
         />
       </div>
-      <Button
-        className="w-full mt-auto shrink-0 mb-2 text-white"
-        color="primary"
-        type="submit"
-      >
+      <Button className="w-full mt-auto shrink-0 mb-2" color="primary" type="submit">
         Guardar receta
       </Button>
     </Form>

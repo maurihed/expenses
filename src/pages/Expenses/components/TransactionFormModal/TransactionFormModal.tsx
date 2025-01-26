@@ -11,7 +11,7 @@ import {
   Radio,
   RadioGroup,
   cn,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { ModalSelector } from "@/componets";
 import { Account, Categories, Transaction } from "@/types";
@@ -94,7 +94,7 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
   };
 
   return (
-    <Modal className="dark text-white" isOpen={isOpen} onClose={onClose} size="full">
+    <Modal isOpen={isOpen} onClose={onClose} size="full">
       <ModalContent>
         <ModalHeader>
           <div className="w-full flex justify-between align-center pr-4">
@@ -176,7 +176,7 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
         </ModalBody>
         <ModalFooter>
           <Button onPress={onClose}>Cancelar</Button>
-          <Button className="text-white" color="primary" onPress={saveTransaction}>
+          <Button color="primary" onPress={saveTransaction}>
             Guardar
           </Button>
         </ModalFooter>
