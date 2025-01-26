@@ -55,7 +55,7 @@ export default function MonthYearPicker({ value, onChange }: Props) {
           variant="light"
           className="rounded-full text-withe"
           isIconOnly
-          onClick={() => handleArrowClick(-1)}
+          onPress={() => handleArrowClick(-1)}
         >
           <Icon prefix="fas" name="arrow-left" />
         </Button>
@@ -83,7 +83,7 @@ export default function MonthYearPicker({ value, onChange }: Props) {
           variant="light"
           className="rounded-full text-withe"
           isIconOnly
-          onClick={() => handleArrowClick(1)}
+          onPress={() => handleArrowClick(1)}
         >
           <Icon prefix="fas" name="arrow-right" />
         </Button>

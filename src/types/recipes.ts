@@ -16,6 +16,7 @@ export type RecipeType = {
   id: string;
   name: string;
   description: string;
+  molde: string;
   ingredients: RecipeSupply[];
   steps: string[];
 }

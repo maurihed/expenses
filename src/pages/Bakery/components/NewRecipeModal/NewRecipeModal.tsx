@@ -13,13 +13,14 @@ export default function NewRecipeModal({ isOpen, onClose }: Props) {
     id: "",
     name: "",
     description: "",
+    molde: "",
     ingredients: [],
     steps: [],
   };
   const { createRecipe } = useRecipeMutations();
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="full">
+    <Modal className="dark text-slate-100" isOpen={isOpen} onClose={onClose} size="full">
       <ModalContent>
         <ModalHeader>
           <div className="w-full flex justify-between align-center pr-4">

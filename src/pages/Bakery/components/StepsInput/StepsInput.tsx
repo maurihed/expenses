@@ -26,7 +26,7 @@ function StepsInput({ label, value, onChange }: Props) {
           color="primary"
           size="sm"
           variant="bordered"
-          onClick={() => onChange([...value, ""])}
+          onPress={() => onChange([...value, ""])}
         >
           <Icon prefix="fas" name="plus" />
           Agregar Paso
@@ -38,6 +38,7 @@ function StepsInput({ label, value, onChange }: Props) {
             <span className="mr-2">{index + 1}.</span>
             <Input
               type="text"
+              name={`step-${index}`}
               value={item}
               onChange={(e) => handleStepChange(index, e.target.value)}
             />
@@ -46,7 +47,7 @@ function StepsInput({ label, value, onChange }: Props) {
               color="danger"
               size="sm"
               isIconOnly
-              onClick={() => removeStep(index)}
+              onPress={() => removeStep(index)}
             >
               <Icon prefix="fas" name="trash" />
             </Button>

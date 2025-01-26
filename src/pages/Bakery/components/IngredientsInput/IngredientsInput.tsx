@@ -37,7 +37,7 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
         <Button
           size="sm"
           variant="bordered"
-          onClick={() => onChange([...value, { id: "", quantity: 0, unitPrice: 0 }])}
+          onPress={() => onChange([...value, { id: "", quantity: 0, unitPrice: 0 }])}
           color="primary"
         >
           <Icon prefix="fas" name="plus" />
@@ -48,8 +48,9 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
         {value.map((item, index) => (
           <div key={index} className="flex items-center">
             <Autocomplete
+              name={`supplyId-${index}`}
               label="Ingredientes"
-              variant="bordered"
+              variant="flat"
               defaultItems={supplies}
               placeholder="Busca un ingrediente"
               className="max-w-xs mr-2"
@@ -62,6 +63,7 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
               )}
             </Autocomplete>
             <Input
+              name={`supplyQuantity-${index}`}
               className="max-w-20 mr-2"
               type="number"
               size="lg"
@@ -75,7 +77,7 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
               color="danger"
               size="sm"
               isIconOnly
-              onClick={() => removeStep(index)}
+              onPress={() => removeStep(index)}
             >
               <Icon prefix="fas" name="trash" />
             </Button>

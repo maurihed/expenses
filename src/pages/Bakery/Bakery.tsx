@@ -19,7 +19,7 @@ function Bakery() {
     <div className="py-4">
       <h1 className="text-3xl mb-4">Lista de recetas</h1>
       <div className="text-right mb-4">
-        <Button onPress={onOpen}>
+        <Button color="primary" onPress={onOpen}>
           <Icon prefix="fas" name="plus"></Icon>
           Nueva Receta
         </Button>
