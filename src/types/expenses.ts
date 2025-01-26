@@ -7,6 +7,14 @@ export type Account = {
 export type TransactionType = "income" | "expense";
 
 export enum Categories {
+  DESPENSA = "Despensa",
+  CENAS = "Cenas",
+  FAMILIA = "Familia",
+  GASOLINA = "Gasolina",
+  VIAJES = "Viajes",
+  JUEGOS = "Juegos",
+  PAPELERIA = "Papeleria",
+  PASTELERIA = "Pasteleria",
   SUPERMERCADO = "Supermercado",
   RESTAURANTE = "Restaurante",
   TRANSPORTE = "Transporte",

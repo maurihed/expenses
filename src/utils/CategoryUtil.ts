@@ -92,6 +92,54 @@ export const getCategoryIconName = (category: string): {iconName: IconName, colo
         color: 'bg-fuchsia-600',
         rawColor: '#c026d3'
       };
+    case "Despensa":
+       return {
+        iconName: "layer-group",
+        color: 'bg-red-700',
+        rawColor: '#920B3A'
+      };
+    case "Cenas":
+       return {
+        iconName: "layer-group",
+        color: 'bg-green-700',
+        rawColor: '#0E793C'
+      };
+    case "Familia":
+       return {
+        iconName: "layer-group",
+        color: 'bg-blue-700',
+        rawColor: '#09AACD'
+      };
+    case "Gasolina":
+       return {
+        iconName: "layer-group",
+        color: 'bg-yellow-400',
+        rawColor: '#F7B750'
+      };
+    case "Viajes":
+       return {
+        iconName: "layer-group",
+        color: 'bg-purple-500',
+        rawColor: '#7828C8'
+      };
+    case "Juegos":
+       return {
+        iconName: "layer-group",
+        color: 'bg-blue-400',
+        rawColor: '#338EF7'
+      };
+    case "Papeleria":
+       return {
+        iconName: "layer-group",
+        color: 'bg-yellow-600',
+        rawColor: '#C4841D'
+      };
+    case "Pasteleria":
+       return {
+        iconName: "layer-group",
+        color: 'bg-pink-500',
+        rawColor: '#FF4ECD'
+      };
     default:
       return {
         iconName: "layer-group",
@@ -100,3 +148,4 @@ export const getCategoryIconName = (category: string): {iconName: IconName, colo
       };
   }
 }
+
