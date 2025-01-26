@@ -157,11 +157,14 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
             value={transactionToEdit.description}
             onChange={(e) => handleChange("description", e.target.value)}
           />
+          {/* TODO: Fix date picker types */}
           <DatePicker
             label="Fecha"
             showMonthAndYearPickers
-            value={toDatePickerFormat(transactionToEdit.date)}
-            onChange={(e) => handleChange("date", parseDatePickerValue(e))}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            value={toDatePickerFormat(transactionToEdit.date) as any}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            onChange={(e: any) => handleChange("date", parseDatePickerValue(e))}
           />
           <ModalSelector
             items={CATEGORIES}

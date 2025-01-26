@@ -4,6 +4,7 @@ export class Recipe {
   private _id: string;
   private _name: string;
   private _description: string;
+  private _molde: string;
   private _ingredients: RecipeSupply[];
   private _steps: string[]
 
@@ -11,6 +12,7 @@ export class Recipe {
     this._id = recipe.id;
     this._name = recipe.name;
     this._description = recipe.description;
+    this._molde = recipe.molde;
     this._ingredients = recipe.ingredients;
     this._steps = recipe.steps;
   }
@@ -33,6 +35,10 @@ export class Recipe {
 
   public get steps(): string[] {
     return this._steps;
+  }
+
+  public get molde(): string {
+    return this._molde
   }
 
   public get totalCost(): number {
