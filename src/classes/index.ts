@@ -1,2 +1,2 @@
 export * from './Recipe';
-export * from './Suply';
+export * from './IngredientObject';

@@ -1,22 +1,40 @@
 import { Icon } from "@/componets";
-import { RecipeSupply } from "@/types";
+import { IngredientRequest } from "@/types";
 import { Autocomplete, AutocompleteItem, Button, Input } from "@heroui/react";
-import { useSupplies } from "../../hooks";
+import { useIngredients } from "../../hooks";
 
 type Props = {
   label: string;
-  value: RecipeSupply[];
-  onChange: (value: RecipeSupply[]) => void;
+  ingredientsAdded: string[];
+  value: IngredientRequest[];
+  onChange: (value: IngredientRequest[]) => void;
 };
-export default function IngredientsInput({ label, value, onChange }: Props) {
-  const { supplies, isLoading, error } = useSupplies();
+
+const EMPTY_INGREDIENT = { id: "", quantity: 0 } as const;
+
+export default function IngredientsInput({
+  label,
+  ingredientsAdded,
+  value,
+  onChange,
+}: Props) {
+  const { ingredients, isLoading, error, refetch } = useIngredients();
 
   if (isLoading) {
     return "Cargando...";
   }
 
   if (error) {
-    return "Error";
+    return (
+      <div>
+        <small>
+          Error al cargar los ingredientes,
+          <Button color="primary" size="sm" variant="light" onPress={() => refetch()}>
+            intentar de nuevo
+          </Button>
+        </small>
+      </div>
+    );
   }
   const removeStep = (index: number) => {
     onChange(value.filter((_, i) => i !== index));
@@ -24,11 +42,15 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
 
   const handleChange = (
     index: number,
-    field: keyof RecipeSupply,
+    field: keyof IngredientRequest,
     _value: number | string
   ) => {
     onChange(value.map((item, i) => (i === index ? { ...item, [field]: _value } : item)));
   };
+
+  const filteredIngredients = ingredients?.filter(
+    (ingredient) => !ingredientsAdded.includes(ingredient.id)
+  );
 
   return (
     <div>
@@ -37,7 +59,7 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
         <Button
           size="sm"
           variant="bordered"
-          onPress={() => onChange([...value, { id: "", quantity: 0, unitPrice: 0 }])}
+          onPress={() => onChange([...value, EMPTY_INGREDIENT])}
           color="primary"
         >
           <Icon prefix="fas" name="plus" />
@@ -51,7 +73,7 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
               name={`supplyId-${index}`}
               label="Ingredientes"
               variant="flat"
-              defaultItems={supplies}
+              defaultItems={filteredIngredients ?? []}
               placeholder="Busca un ingrediente"
               className="max-w-xs mr-2"
               selectedKey={item.id}
@@ -59,7 +81,9 @@ export default function IngredientsInput({ label, value, onChange }: Props) {
               size="sm"
             >
               {(supplyItem) => (
-                <AutocompleteItem key={supplyItem.id}>{supplyItem.name}</AutocompleteItem>
+                <AutocompleteItem key={supplyItem.id}>
+                  {supplyItem.name} ({supplyItem.unit})
+                </AutocompleteItem>
               )}
             </Autocomplete>
             <Input

@@ -5,8 +5,9 @@ import { Button } from "@heroui/react";
 
 type Props = {
   recipe: Recipe;
+  onDelete: (recipe: Recipe) => void;
 };
-function RecipeItem({ recipe }: Props) {
+function RecipeItem({ recipe, onDelete }: Props) {
   return (
     <div className="rounded-lg border shadow-sm p-6 bg-slate-800">
       <h3 className="text-xl mb-2">{recipe.name}</h3>
@@ -28,6 +29,7 @@ function RecipeItem({ recipe }: Props) {
             color="danger"
             isIconOnly
             aria-label="Eliminar receta"
+            onPress={() => onDelete(recipe)}
           >
             <Icon prefix="fas" name="trash" />
           </Button>

@@ -1,6 +1,6 @@
 import { Modal, ModalBody, ModalContent, ModalHeader } from "@heroui/react";
 import { RecipeForm } from "../RecipeForm";
-import { RecipeType } from "@/types";
+import { RecipeRequest } from "@/types";
 import { useRecipeMutations } from "../../hooks/useRecipeMutations";
 
 type Props = {
@@ -9,8 +9,7 @@ type Props = {
 };
 
 export default function NewRecipeModal({ isOpen, onClose }: Props) {
-  const newRecipe: RecipeType = {
-    id: "",
+  const newRecipe: RecipeRequest = {
     name: "",
     description: "",
     molde: "",

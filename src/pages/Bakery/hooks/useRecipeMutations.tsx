@@ -1,20 +1,25 @@
 import { Recipe } from "@/classes";
 import { RecipeService } from "@/services";
+import { RecipeRequest } from "@/types";
 import { useMutation, useQueryClient } from "react-query";
+import { useIngredients } from "./useIngredients";
 
 export const useRecipeMutations = () => {
   const queryClient = useQueryClient();
 
+  const { ingredients } = useIngredients();
+
   const { mutate: createRecipe } = useMutation(RecipeService.addRecipe, {
-    onSuccess: (newRecipe: Recipe) => {
+    onSuccess: (newRecipe: RecipeRequest) => {
+      const recipe = new Recipe(newRecipe, ingredients);
       queryClient.setQueryData<Recipe[]>("recipes", (prevRecipes) => [
-        newRecipe,
+        recipe,
         ...(prevRecipes ?? []),
       ]);
     },
   });
 
-  const { mutate: updateRecipe } = useMutation(RecipeService.updateRecipe, {
+  const { mutateAsync: updateRecipe } = useMutation(RecipeService.updateRecipe, {
     onSuccess: (editedRecipe: Recipe) => {
       queryClient.setQueryData<Recipe[]>(
         "recipes",
@@ -26,7 +31,7 @@ export const useRecipeMutations = () => {
     },
   });
 
-  const { mutate: deleteRecipe } = useMutation(RecipeService.deleteRecipe, {
+  const { mutateAsync: deleteRecipe } = useMutation(RecipeService.deleteRecipe, {
     onSuccess: (deletedRecipe: Recipe) => {
       queryClient.setQueryData<Recipe[]>(
         "recipes",

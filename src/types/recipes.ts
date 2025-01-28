@@ -1,14 +1,10 @@
-export type SupplyType = {
+export type Ingredient = {
   id: string;
   name: string;
+  content: number;
   price: number;
   quantity: number;
   unit: string;
-};
-
-export type RecipeSupply = {
-  id: string;
-  quantity: number;
   unitPrice: number;
 }
 
@@ -17,12 +13,10 @@ export type RecipeType = {
   name: string;
   description: string;
   molde: string;
-  ingredients: RecipeSupply[];
+  ingredients: Ingredient[];
   steps: string[];
 }
 
-export type RecipeRequest = (Omit<RecipeType, 'id' | 'ingredients'>) & {
-  ingredients: Omit<RecipeSupply, 'unitPrice'>[]
-};
 
-export type RecipeForm = Omit<RecipeType, 'ingredientSupplies'>;
+export type IngredientRequest = Omit<Ingredient, 'unitPrice' | 'name' | 'content' | 'price' | 'unit' | 'unitPrice'>;
+export type RecipeRequest = (Omit<RecipeType, 'id' | 'ingredients'>) & { id?: string; ingredients: IngredientRequest[] };

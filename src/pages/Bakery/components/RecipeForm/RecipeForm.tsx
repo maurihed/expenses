@@ -1,4 +1,4 @@
-import { RecipeSupply, RecipeType } from "@/types";
+import { IngredientRequest, RecipeRequest } from "@/types";
 import { Button, Form, Input, Select, SelectItem, Textarea } from "@heroui/react";
 
 import { FormEvent, useState } from "react";
@@ -15,17 +15,17 @@ type Errors = {
 };
 
 type Props = {
-  recipe: RecipeType;
-  action: (recipe: RecipeType) => void;
+  recipe: RecipeRequest;
+  action: (recipe: RecipeRequest) => void;
 };
 
 function RecipeForm({ recipe, action }: Props) {
-  const [newRecipe, setNewRecipe] = useState<RecipeType>(recipe);
+  const [newRecipe, setNewRecipe] = useState<RecipeRequest>(recipe);
   const [errors, setErrors] = useState<Errors>({});
 
   const handleChange = (
     field: string,
-    value: number | string | RecipeSupply[] | string[]
+    value: number | string | IngredientRequest[] | string[]
   ) => {
     setNewRecipe({ ...newRecipe, [field]: value });
   };
@@ -60,6 +60,8 @@ function RecipeForm({ recipe, action }: Props) {
 
     action(newRecipe);
   };
+
+  const ingredientsAdded = newRecipe.ingredients.map((ingredient) => ingredient.id);
 
   return (
     <Form
@@ -106,9 +108,10 @@ function RecipeForm({ recipe, action }: Props) {
           onChange={(newSteps: string[]) => handleChange("steps", newSteps)}
         />
         <IngredientsInput
+          ingredientsAdded={ingredientsAdded}
           label="Ingredientes"
           value={newRecipe.ingredients}
-          onChange={(newIngredients: RecipeSupply[]) =>
+          onChange={(newIngredients: IngredientRequest[]) =>
             handleChange("ingredients", newIngredients)
           }
         />

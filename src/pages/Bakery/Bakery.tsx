@@ -12,7 +12,7 @@ function Bakery() {
   }
 
   if (error || !recipes) {
-    return "Error";
+    return "Error" + JSON.stringify(error);
   }
 
   return (

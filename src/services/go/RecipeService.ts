@@ -1,26 +1,19 @@
 import { Recipe } from "@/classes";
 import { RecipeRequest, RecipeType } from "@/types";
 
-// const { VITE_GO_BASE_URL } = import.meta.env;
-// const RECIPES_URL = `${VITE_GO_BASE_URL}/recipes`;
+const { VITE_GO_BASE_URL } = import.meta.env;
+const RECIPES_URL = `${VITE_GO_BASE_URL}/recipes`;
 
 export class RecipeService {
-  private static parseRecipeType(recipe: RecipeType): RecipeRequest {
-    const ingredients = recipe.ingredients.map((ingredient) => ({
-      id: ingredient.id,
-      quantity: ingredient.quantity,
-    }));
-    return { ...recipe, ingredients };   
-  }
 
-  public static async deleteRecipe({ recipe }: {recipe: Recipe}): Promise<Recipe> {
+  public static async deleteRecipe(recipe: Recipe): Promise<Recipe> {
     try {
-      // const response = await fetch(`${RECIPES_URL}/${recipe.id}`, {
-      //   method: "DELETE",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
+      await fetch(`${RECIPES_URL}/${recipe.id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       return Promise.resolve(recipe);
     } catch (error) {
       return Promise.reject(error);
@@ -43,21 +36,17 @@ export class RecipeService {
       return Promise.reject(error);
     }
   }
-  public static async addRecipe(recipe: RecipeType): Promise<Recipe> {
+  public static async addRecipe(recipe: RecipeRequest): Promise<RecipeRequest> {
     try {
-      console.log('JOIN');
-      const body = RecipeService.parseRecipeType(recipe);
-      // const response = await fetch(RECIPES_URL, {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(recipe),
-      // });
-      // const newRecipe = await response.json();
-      console.log('Creating new recipe', body);
-      const newRecipe = new Recipe(recipe);
-      return Promise.resolve(newRecipe);
+      const response = await fetch(RECIPES_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(recipe),
+      });
+      const { id: recipeInsertedId } = await response.json();
+      return Promise.resolve({...recipe, id: recipeInsertedId});
     } catch (error) {
       console.log(error);
       return Promise.reject(error);
@@ -65,11 +54,9 @@ export class RecipeService {
   }
   public static async getRecipes(): Promise<Recipe[]> {
     try {
-      // const response = await fetch(RECIPES_URL);
-      // const recipes = await response.json();
-      const dumpResponse = await fetch('./recipes.json');
-      const recipes = await dumpResponse.json() as RecipeType[];
-      return Promise.resolve(recipes.map((recipe) => new Recipe(recipe)));
+      const response = await fetch(RECIPES_URL);
+      const recipes = await response.json();
+      return Promise.resolve(recipes.map((recipe: RecipeType) => new Recipe(recipe)));
     } catch (error) {
       return Promise.reject(error);
     }
