@@ -94,7 +94,14 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="full">
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      size="full"
+      placement="center"
+      scrollBehavior="inside"
+      shouldBlockScroll
+    >
       <ModalContent>
         <ModalHeader>
           <div className="w-full flex justify-between align-center pr-4">

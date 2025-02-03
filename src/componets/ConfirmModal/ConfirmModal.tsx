@@ -27,7 +27,13 @@ function ConfirmModal({
   confirmText = "Confirmar",
 }: Props) {
   return (
-    <Modal isOpen={isOpen} size="sm" onClose={onClose} placement="center">
+    <Modal
+      isOpen={isOpen}
+      size="sm"
+      onClose={onClose}
+      placement="center"
+      shouldBlockScroll
+    >
       <ModalContent>
         {(onClose) => (
           <>

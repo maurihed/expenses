@@ -19,7 +19,15 @@ export default function NewRecipeModal({ isOpen, onClose }: Props) {
   const { createRecipe } = useRecipeMutations();
 
   return (
-    <Modal className="text-slate-100" isOpen={isOpen} onClose={onClose} size="full">
+    <Modal
+      className="text-slate-100"
+      isOpen={isOpen}
+      onClose={onClose}
+      size="full"
+      placement="center"
+      shouldBlockScroll
+      scrollBehavior="inside"
+    >
       <ModalContent>
         <ModalHeader>
           <div className="w-full flex justify-between align-center pr-4">
