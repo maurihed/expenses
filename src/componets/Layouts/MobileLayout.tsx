@@ -37,6 +37,20 @@ function MobileLayout({ children }: { children: React.ReactNode }) {
               Reposteria
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                classNames(
+                  "inline-flex items-center py-2 px-4 rounded-lg hover:bg-primary-400",
+                  { "bg-primary-400": isActive }
+                )
+              }
+              to="/workouts"
+            >
+              <Icon prefix="fas" name="dumbbell" className="mr-3" />
+              Gym
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </div>

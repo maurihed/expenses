@@ -1,6 +1,6 @@
 import { HeroUIProvider } from "@heroui/react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Bakery, Expenses } from "@/pages";
+import { Bakery, Expenses, WorkoutPage } from "@/pages";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,6 +20,8 @@ function App() {
               <Route path="/" element={<Navigate to="/expenses" />} />
               <Route path="/expenses" element={<Expenses />} />
               <Route path="/bakery" element={<Bakery />} />
+              <Route path="/workouts" element={<Navigate to="/workouts/mauricio" />} />
+              <Route path="/workouts/:id" element={<WorkoutPage />} />
               <Route path="*" element={<Navigate to="/expenses" />} />
             </Routes>
           </MobileLayout>

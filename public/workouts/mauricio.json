@@ -1,0 +1,273 @@
+[
+  
+  {
+    "id": "1",
+    "name": "Empuje",
+    "activities": [
+      {
+        "name": "Calentamiento",
+        "sets": 1,
+        "action": "10 min"
+      },
+      {
+        "name": "Saltar la cuerda",
+        "sets": 3,
+        "action": "2 min"
+      },
+      {
+        "name": "Press de banca",
+        "sets": 4,
+        "action": "8 - 10 reps"
+      },
+      {
+        "name": "Fondos en banco",
+        "sets": 3,
+        "action": "10 - 12 reps"
+      },
+      {
+        "name": "Elevaciones laterales",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Extensión de tríceps en polea",
+        "sets": 3,
+        "action": "10 reps"
+      },
+      {
+        "name": "Escaladora (enfriamiento)",
+        "sets": 1,
+        "action": "10 min"
+      } 
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Jalon",
+    "activities": [
+      {
+        "name": "Calentamiento",
+        "sets": 1,
+        "action": "10 min"
+      },
+      {
+        "name": "Saltar la cuerda",
+        "sets": 3,
+        "action": "2 min"
+      },
+      {
+        "name": "Dominadas o jalon al pecho",
+        "sets": 4,
+        "action": "8 - 10 reps",
+        "weight": "90 lb",
+        "note": "haz las Dominadas que puedas antes de esta serie"
+      },
+      {
+        "name": "Remo con polea",
+        "sets": 4,
+        "action": "10 reps",
+        "weight": "90 lb",
+        "note": "(Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Curl con barra",
+        "sets": 3,
+        "action": "8 - 10 reps",
+        "weight": "45 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Face pulls",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "45 lb",
+        "note": "aumenta peso cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Curl martillo",
+        "sets": 3,
+        "action": "8 - 10 reps",
+        "weight": "30 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Escaladora (enfriamiento)",
+        "sets": 1,
+        "action": "10 min"
+      } 
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Pierna",
+    "activities": [
+      {
+        "name": "Calentamiento",
+        "sets": 1,
+        "action": "10 min"
+      },
+      {
+        "name": "Saltar la cuerda",
+        "sets": 3,
+        "action": "2 min"
+      },
+      {
+        "name": "Sentadilla en Smith",
+        "sets": 4,
+        "action": "10 reps",
+        "weight": "25 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Prensa de piernas",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "90 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Peso muerto",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "45 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Extensiones de pierna",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "40 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Curl de pierna",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "40 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Elevaciones de pantorrillas",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "90 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Escaladora (enfriamiento)",
+        "sets": 1,
+        "action": "10 min"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Cardio y Core",
+    "activities": [
+      {
+        "name": "Calentamiento",
+        "sets": 1,
+        "action": "5 min"
+      },
+      {
+        "name": "Saltar la cuerda",
+        "sets": 5,
+        "action": "2 min"
+      },
+      {
+        "name": "Escaladora",
+        "sets": 1,
+        "action": "20 min"
+      },
+      {
+        "name": "Plancha abdominal",
+        "sets": 3,
+        "action": "1 min"
+      },
+      {
+        "name": "Russian twists (con peso)",
+        "sets": 3,
+        "action": "20 reps",
+        "weight":"10 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 24 reps"
+      },
+      {
+        "name": "Elevaciones de piernas colgado",
+        "sets": 3,
+        "action": "12-15 reps",
+        "note": "Intenta estirar mas los pies con el tiempo"
+      },
+      {
+        "name": "Montain climbers",
+        "sets": 3,
+        "action": "30 seg"
+      },
+      {
+        "name": "Escaladora (enfriamiento)",
+        "sets": 1,
+        "action": "5 min"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Full body",
+    "activities": [
+      {
+        "name": "Calentamiento",
+        "sets": 1,
+        "action": "10 min"
+      },
+      {
+        "name": "Saltar la cuerda",
+        "sets": 3,
+        "action": "2 min"
+      },
+      {
+        "name": "Sentadilla en Smith",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "25 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Press de banca",
+        "sets": 3,
+        "action": "8-10 reps",
+        "weight": "135 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Remo con polea",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "90 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Peso muerto",
+        "sets": 3,
+        "action": "10 reps",
+        "weight": "45 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Fondos en banco",
+        "sets": 3,
+        "action": "10-12 reps"
+      },
+      {
+        "name": "Curl de bíceps con barra",
+        "sets": 3,
+        "action": "8-10 reps",
+        "weight": "45 lb",
+        "note": "Aumenta 10 lb cuando puedas hacer 12 reps"
+      },
+      {
+        "name": "Enfriamiento",
+        "sets": 1,
+        "action": "10 min"
+      }
+    ]
+  }
+]

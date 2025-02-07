@@ -1,0 +1,182 @@
+[
+  {
+    "id": "1",
+    "name": "Push (Empuje)",
+    "activities": [
+      {
+        "name": "Press de banca con barra o mancuernas",
+        "sets": 4,
+        "action": "8 - 12 reps"
+      },
+      {
+        "name": "Press militar con barra o mancuernas",
+        "sets": 3,
+        "action": "8 - 12 reps"
+      },
+      {
+        "name": "Fondos en paralelas o press inclinado",
+        "sets": 3,
+        "action": "10 - 12 reps"
+      },
+      {
+        "name": "Elevaciones laterales con mancuernas",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Extensiones de tríceps en polea o con mancuerna",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Abdominales en plancha",
+        "sets": 3,
+        "action": "30 - 60 seg"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Pull (Jalar)",
+    "activities": [
+      {
+        "name": "Dominadas asistidas o jalón al pecho",
+        "sets": 4,
+        "action": "8 - 12 reps"
+      },
+      {
+        "name": "Remo con barra o mancuernas",
+        "sets": 4,
+        "action": "8 - 12 reps"
+      },
+      {
+        "name": "Face pulls con cuerda en polea",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Curl de bíceps con barra o mancuernas",
+        "sets": 3,
+        "action": "10 - 12 reps"
+      },
+      {
+        "name": "Curl martillo con mancuernas",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Plancha lateral",
+        "sets": 3,
+        "action": "30 - 60 seg por lado"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Legs (Piernas)",
+    "activities": [
+      {
+        "name": "Sentadillas con barra o mancuernas",
+        "sets": 4,
+        "action": "8 - 12 reps"
+      },
+      {
+        "name": "Peso muerto rumano",
+        "sets": 4,
+        "action": "8 - 12 reps"
+      },
+      {
+        "name": "Zancadas o bulgarian split squats",
+        "sets": 3,
+        "action": "10 - 12 reps por pierna"
+      },
+      {
+        "name": "Extensiones de pierna en máquina",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Curl de pierna en máquina",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Elevaciones de talones de pie",
+        "sets": 4,
+        "action": "15 - 20 reps"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Acondicionamiento y Abdomen",
+    "activities": [
+      {
+        "name": "Saltos de cuerda",
+        "sets": 3,
+        "action": "1 min"
+      },
+      {
+        "name": "Burpees",
+        "sets": 3,
+        "action": "10 - 12 reps"
+      },
+      {
+        "name": "Mountain climbers",
+        "sets": 3,
+        "action": "30 - 40 seg"
+      },
+      {
+        "name": "Russian twists con mancuerna o balón medicinal",
+        "sets": 3,
+        "action": "20 reps (10 por lado)"
+      },
+      {
+        "name": "Elevaciones de piernas colgando o en el suelo",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Plancha con desplazamientos laterales",
+        "sets": 3,
+        "action": "30 - 60 seg"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Full Body (Cuerpo Completo)",
+    "activities": [
+      {
+        "name": "Sentadillas con salto (Jump squats)",
+        "sets": 3,
+        "action": "12 - 15 reps"
+      },
+      {
+        "name": "Flexiones de brazos (Push-ups)",
+        "sets": 3,
+        "action": "10 - 15 reps"
+      },
+      {
+        "name": "Peso muerto con mancuernas",
+        "sets": 3,
+        "action": "10 - 12 reps"
+      },
+      {
+        "name": "Remo con mancuernas a una mano",
+        "sets": 3,
+        "action": "10 - 12 reps por lado"
+      },
+      {
+        "name": "Press de hombros con mancuernas",
+        "sets": 3,
+        "action": "10 - 12 reps"
+      },
+      {
+        "name": "Plancha con elevación de brazos y piernas",
+        "sets": 3,
+        "action": "30 - 60 seg"
+      }
+    ]
+  }
+]

@@ -2,7 +2,7 @@
 
 import { AccountService as FireBaseAccountService, TransactionService as FireBaseTransactionService } from  './firebase';
 import { AccountService as GoAccountService, TransactionService as GoTransactionService } from './go';
-import { IngredientService, RecipeService } from './go';
+import { IngredientService, RecipeService, WorkoutService } from './go';
 
 let AccountService = FireBaseAccountService;
 let TransactionService = FireBaseTransactionService;
@@ -20,5 +20,6 @@ export {
   AccountService,
   TransactionService,
   IngredientService,
-  RecipeService
+  RecipeService,
+  WorkoutService,
 }
