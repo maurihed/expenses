@@ -16,7 +16,7 @@ export default {
         "22rem": "22rem",
       },
       gridTemplateColumns: {
-        responsive: "repeat(auto-fill, minmax(22rem, 1fr))",
+        responsive: "repeat(auto-fill, minmax(21rem, 1fr))",
       },
       spacing: {
         100: "25rem",

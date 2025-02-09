@@ -117,7 +117,7 @@ function TransactionFormModal({ isOpen, onClose, transaction, account, action }:
             )}
           </div>
         </ModalHeader>
-        <ModalBody>
+        <ModalBody className="basis-full">
           <RadioGroup
             orientation="horizontal"
             className="items-end"

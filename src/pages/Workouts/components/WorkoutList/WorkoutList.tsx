@@ -21,7 +21,7 @@ function WorkoutList({ workouts }: { workouts: Workout[] }) {
   };
 
   return (
-    <Accordion variant="splitted">
+    <Accordion className="my-4" variant="splitted">
       {workouts.map((workout) => (
         <AccordionItem key={workout.id} aria-label={workout.name} title={workout.name}>
           <WorkoutItem

@@ -34,7 +34,7 @@ export default function NewRecipeModal({ isOpen, onClose }: Props) {
             <span>Nueva receta</span>
           </div>
         </ModalHeader>
-        <ModalBody className="overflow-y-auto">
+        <ModalBody className="basis-full">
           <RecipeForm action={createRecipe} recipe={newRecipe} />
         </ModalBody>
       </ModalContent>

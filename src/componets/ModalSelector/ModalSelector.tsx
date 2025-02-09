@@ -44,7 +44,7 @@ function ModalSelector({ items, value, onChange }: Props) {
       </button>
       <Modal className="text-white" isOpen={isOpen} onClose={onClose}>
         <ModalContent>
-          <ModalBody>
+          <ModalBody className="basis-full">
             <Input
               className="text-white"
               label="Buscar"
